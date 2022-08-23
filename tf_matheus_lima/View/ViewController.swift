@@ -32,12 +32,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        var path = String(self.movies[indexPath.row].id)
+        let path = self.movies[indexPath.row].posterPath
         
         imageService.image(for: path) { [weak self] image in
                 // Update Thumbnail Image View
-                cell.imageView?.image = image
-            }
+                //cell.imageView?.image = image
+            self?.tableView.cellForRow(at: indexPath)?.imageView?.image =
+image            }
         
         
         cell.textLabel?.text = self.movies[indexPath.row].title

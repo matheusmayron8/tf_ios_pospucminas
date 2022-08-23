@@ -13,8 +13,9 @@ final class ImageService {
 
     // MARK: - Public API
 
-    func image(for url: String, completion: @escaping (UIImage?) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/$path/images?api_key=9c3103928c7fe54f47a6a21da1e9893e")!
+    func image(for posterPath: String, completion: @escaping (UIImage?) -> Void) {
+        let url = URL(string: "https://image.tmdb.org/t/p/original" + posterPath)!
+        print(url)
         URLSession.shared.dataTask(with: url) { data, _, _ in
             // Helper
             var image: UIImage?
