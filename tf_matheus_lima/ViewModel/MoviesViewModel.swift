@@ -20,6 +20,8 @@ class MoviesViewModel {
             moviesService.getMovies { [weak self] data, error in
                 let responseData = try? JSONDecoder().decode(MoviesTopRated.self, from: data!)
                 self?.movies = responseData!.results
+                
+                
         }
     }
 }

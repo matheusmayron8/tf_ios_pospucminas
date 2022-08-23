@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     private var viewmodel: MoviesViewModel!
     
+    
+    private lazy var imageService = ImageService()
     var movies: [Movies] {
         viewmodel.movies
     }
@@ -29,6 +32,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        var path = String(self.movies[indexPath.row].id)
+        
+        imageService.image(for: path) { [weak self] image in
+                // Update Thumbnail Image View
+                cell.imageView?.image = image
+            }
+        
+        
         cell.textLabel?.text = self.movies[indexPath.row].title
         return cell
     }
@@ -36,6 +47,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
+    
+    
 
 
 }
