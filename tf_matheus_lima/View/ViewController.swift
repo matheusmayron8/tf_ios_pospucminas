@@ -30,6 +30,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         viewmodel.getMovies()
     }
     
+    /*
+    func didTapCell(position: IndexPath) {
+            let id = String(movies[position.row].id)
+            self.present(MovieDetailsController(movieId: id), animated: true)
+    }
+    */
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let path = self.movies[indexPath.row].posterPath
@@ -37,8 +44,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         imageService.image(for: path) { [weak self] image in
                 // Update Thumbnail Image View
                 //cell.imageView?.image = image
-            self?.tableView.cellForRow(at: indexPath)?.imageView?.image =
-image            }
+            
+                self?.tableView.cellForRow(at: indexPath)?.imageView?.image =
+    image
+            
+                      }
         
         
         cell.textLabel?.text = self.movies[indexPath.row].title
@@ -49,8 +59,11 @@ image            }
         return movies.count
     }
     
-    
-
+    /*
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           didTapCell(position: indexPath)
+    }
+    */
 
 }
 

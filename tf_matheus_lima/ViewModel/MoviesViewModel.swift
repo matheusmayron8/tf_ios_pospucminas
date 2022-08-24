@@ -7,8 +7,15 @@
 
 import Foundation
 
+protocol MoviesViewModelDelegate: AnyObject {
+    func getDetails(movieId: Movies)
+}
+
 class MoviesViewModel {
+    
     private let moviesService: MoviesService
+    
+    weak var delegate: MoviesViewModelDelegate?
     
     var movies:[Movies] = []
     
