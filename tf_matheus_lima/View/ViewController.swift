@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MoviesViewModelDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     private var viewmodel: MoviesViewModel!
@@ -26,16 +26,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.delegate = self
         tableView.dataSource = self
+        viewmodel.delegate = self
         
         viewmodel.getMovies()
     }
-    
-    /*
-    func didTapCell(position: IndexPath) {
-            let id = String(movies[position.row].id)
-            self.present(MovieDetailsController(movieId: id), animated: true)
-    }
-    */
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -44,12 +38,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         imageService.image(for: path) { [weak self] image in
                 // Update Thumbnail Image View
                 //cell.imageView?.image = image
-            
-                self?.tableView.cellForRow(at: indexPath)?.imageView?.image =
-    image
-            
-                      }
-        
+                self?.tableView.cellForRow(at: indexPath)?.setNeedsLayout()
+                self?.tableView.cellForRow(at: indexPath)?.imageView?.image = image
+        }
         
         cell.textLabel?.text = self.movies[indexPath.row].title
         return cell
@@ -59,11 +50,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return movies.count
     }
     
-    /*
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            didTapCell(position: indexPath)
     }
-    */
+    
+    func didTapCell(position: IndexPath) {
+            let id = String(movies[position.row].id)
+            self.present(MovieDetailsController(movieId: id), animated: true)
+    }
+    
+    func reloadMoviesList() {
+        tableView.reloadData()
+    }
 
 }
 

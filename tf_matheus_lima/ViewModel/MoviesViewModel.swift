@@ -8,7 +8,8 @@
 import Foundation
 
 protocol MoviesViewModelDelegate: AnyObject {
-    func getDetails(movieId: Movies)
+    //func getDetails(movieId: Movies)
+    func reloadMoviesList()
 }
 
 class MoviesViewModel {
@@ -27,8 +28,11 @@ class MoviesViewModel {
             moviesService.getMovies { [weak self] data, error in
                 let responseData = try? JSONDecoder().decode(MoviesTopRated.self, from: data!)
                 self?.movies = responseData!.results
+                self?.delegate?.reloadMoviesList()
                 
                 
         }
     }
+    
+    	
 }
