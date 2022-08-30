@@ -16,7 +16,7 @@ class MoviesService {
     }
     
     func getImage(movieId:Int, completion: @escaping (Data?, Error?) -> Void) -> Void {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/$movieId/images??api_key=9c3103928c7fe54f47a6a21da1e9893e")
+        let url = URL(string: "https://api.themoviedb.org/3/movie/$movieId/images?api_key=9c3103928c7fe54f47a6a21da1e9893e")
         URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
             completion(data, error)
         }).resume()

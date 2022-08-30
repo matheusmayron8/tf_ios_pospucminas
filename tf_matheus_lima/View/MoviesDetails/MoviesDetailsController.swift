@@ -14,7 +14,7 @@ class MovieDetailsController: UIViewController {
     var movieId: String
     var movie: MovieDetails? {
         DispatchQueue.main.async { [weak self] in
-            self?.mainTitle.text = "Título: \(self?.viewModel?.movie?.title ?? "")"
+            self?.mainTitle.text = "Título: \(self?.viewModel?.movie?.title ?? "Carregando Informações...")"
             self?.voteAverage.text = "Pontuação Média: \(String(self?.viewModel?.movie?.voteAverage ?? 0.0))"
             self?.voteCount.text = "Total de votos: \(String(self?.viewModel?.movie?.voteCount ?? 0))"
         }
@@ -37,11 +37,11 @@ class MovieDetailsController: UIViewController {
         
         viewModel = MovieDetailsViewModel (model: MovieDetailModel())
         viewModel?.fetchMovie(movieId: movieId)
-        
         view.addSubview(mainTitle)
         view.addSubview(voteAverage)
         view.addSubview(voteCount)
         
+        view.layoutIfNeeded()
         setupConstraints()
     }
     
@@ -64,7 +64,7 @@ class MovieDetailsController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         
         view.text = movie?.title
-        
+        print(view.text)
         return view
     }()
     
