@@ -28,26 +28,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         viewmodel.delegate = self
         
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        
         viewmodel.getMovies()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell") as! MovieTableViewCell
         let path = self.movies[indexPath.row].posterPath
         
         imageService.image(for: path) { [weak self] image in
                 // Update Thumbnail Image View
                 //cell.imageView?.image = image
-                self?.tableView.cellForRow(at: indexPath)?.setNeedsLayout()
-                self?.tableView.cellForRow(at: indexPath)?.imageView?.image = image
+            self?.tableView.cellForRow(at: indexPath)?.setNeedsLayout()
+            (self?.tableView.cellForRow(at: indexPath) as! MovieTableViewCell).movieImgView.image = image
         }
         
-        cell.textLabel?.text = self.movies[indexPath.row].title
+        cell.movieLabel?.text = self.movies[indexPath.row].title
         return cell
     }
     	
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        300
     }
     
 
@@ -61,7 +68,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func reloadMoviesList() {
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
 }

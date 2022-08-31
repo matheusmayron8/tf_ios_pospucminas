@@ -19,6 +19,53 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2aT-dQ-mna">
                                 <rect key="frame" x="8" y="52" width="398" height="802"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movieCell" rowHeight="300" id="zXm-iO-tJK" customClass="MovieTableViewCell" customModule="tf_matheus_lima" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="398" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zXm-iO-tJK" id="8z7-Q1-9id">
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHj-Qd-Aef">
+                                                    <rect key="frame" x="20" y="11" width="358" height="278"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NO9-tb-dW9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="278"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C22-16-j6x">
+                                                            <rect key="frame" x="8" y="249" width="42" height="21"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                    <constraints>
+                                                        <constraint firstItem="NO9-tb-dW9" firstAttribute="leading" secondItem="xHj-Qd-Aef" secondAttribute="leading" id="Cve-ZC-qJO"/>
+                                                        <constraint firstItem="C22-16-j6x" firstAttribute="leading" secondItem="xHj-Qd-Aef" secondAttribute="leading" constant="8" id="E1G-GU-140"/>
+                                                        <constraint firstAttribute="bottom" secondItem="NO9-tb-dW9" secondAttribute="bottom" id="c9t-Id-72x"/>
+                                                        <constraint firstAttribute="bottom" secondItem="C22-16-j6x" secondAttribute="bottom" constant="8" id="czf-yP-6y2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="NO9-tb-dW9" secondAttribute="trailing" id="eIZ-gj-aoW"/>
+                                                        <constraint firstItem="NO9-tb-dW9" firstAttribute="top" secondItem="xHj-Qd-Aef" secondAttribute="top" id="ztF-Dg-Ux7"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xHj-Qd-Aef" firstAttribute="leading" secondItem="8z7-Q1-9id" secondAttribute="leadingMargin" id="D4l-hn-nAy"/>
+                                                <constraint firstItem="xHj-Qd-Aef" firstAttribute="bottom" secondItem="8z7-Q1-9id" secondAttribute="bottomMargin" id="NB9-ia-x9x"/>
+                                                <constraint firstItem="xHj-Qd-Aef" firstAttribute="top" secondItem="8z7-Q1-9id" secondAttribute="topMargin" id="ZTx-if-KZV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xHj-Qd-Aef" secondAttribute="trailing" id="jck-PW-RoP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieImgView" destination="NO9-tb-dW9" id="wx9-vL-jMF"/>
+                                            <outlet property="movieLabel" destination="C22-16-j6x" id="QKp-6d-JxF"/>
+                                            <outlet property="movieView" destination="xHj-Qd-Aef" id="TEx-gv-DjW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -36,12 +83,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="84"/>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
