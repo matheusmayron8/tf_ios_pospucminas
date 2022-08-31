@@ -6,3 +6,9 @@ Trabalho Final - Desenvolvimento iOS Avançado
  - Marcelo Yutaka
  - Matheus Mayron
  - Wander Arce
+
+## API utilizada
+https://www.themoviedb.org/documentation/api
+
+## Arquitetura
+MVVM
