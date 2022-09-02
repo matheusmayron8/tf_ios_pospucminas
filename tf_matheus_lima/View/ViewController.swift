@@ -46,6 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         cell.movieLabel?.text = self.movies[indexPath.row].title
+        cell.averageLabel.text = String(self.movies[indexPath.row].voteAverage)
         return cell
     }
     	

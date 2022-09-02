@@ -40,14 +40,23 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbu-pP-qqk">
+                                                            <rect key="frame" x="308" y="249" width="42" height="21"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Gbu-pP-qqk" secondAttribute="trailing" constant="8" id="CbL-zc-aIL"/>
                                                         <constraint firstItem="NO9-tb-dW9" firstAttribute="leading" secondItem="xHj-Qd-Aef" secondAttribute="leading" id="Cve-ZC-qJO"/>
                                                         <constraint firstItem="C22-16-j6x" firstAttribute="leading" secondItem="xHj-Qd-Aef" secondAttribute="leading" constant="8" id="E1G-GU-140"/>
                                                         <constraint firstAttribute="bottom" secondItem="NO9-tb-dW9" secondAttribute="bottom" id="c9t-Id-72x"/>
                                                         <constraint firstAttribute="bottom" secondItem="C22-16-j6x" secondAttribute="bottom" constant="8" id="czf-yP-6y2"/>
                                                         <constraint firstAttribute="trailing" secondItem="NO9-tb-dW9" secondAttribute="trailing" id="eIZ-gj-aoW"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Gbu-pP-qqk" secondAttribute="bottom" constant="8" id="tJ9-aG-2S4"/>
                                                         <constraint firstItem="NO9-tb-dW9" firstAttribute="top" secondItem="xHj-Qd-Aef" secondAttribute="top" id="ztF-Dg-Ux7"/>
                                                     </constraints>
                                                 </view>
@@ -60,6 +69,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="averageLabel" destination="Gbu-pP-qqk" id="T6T-Fw-91F"/>
                                             <outlet property="movieImgView" destination="NO9-tb-dW9" id="wx9-vL-jMF"/>
                                             <outlet property="movieLabel" destination="C22-16-j6x" id="QKp-6d-JxF"/>
                                             <outlet property="movieView" destination="xHj-Qd-Aef" id="TEx-gv-DjW"/>

@@ -12,9 +12,12 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var movieImgView: UIImageView!
     @IBOutlet weak var movieLabel: UILabel!
+    @IBOutlet weak var averageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        movieImgView.layer.cornerRadius = movieImgView.bounds.width / 50
+        movieImgView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
