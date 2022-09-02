@@ -35,7 +35,10 @@ class MovieDetailsController: UIViewController {
         self.view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        viewModel = MovieDetailsViewModel (model: MovieDetailModel())
+        // viewModel = MovieDetailsViewModel (model: MovieDetailModel())
+        
+        viewModel = MovieDetailsViewModel(movie: MovieDetailsModel())
+             
         viewModel?.fetchMovie(movieId: movieId)
         view.addSubview(mainTitle)
         view.addSubview(voteAverage)

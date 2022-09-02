@@ -9,11 +9,17 @@ import Foundation
 
 class MovieDetailsViewModel {
     var movie: MovieDetails?
-    var model: MovieDetailModel
+    // var model: MovieDetailModel
+    var model: MovieDetailsModelType
     
-    init(model: MovieDetailModel) {
+    /*init(model: MovieDetailModel) {
         self.model = model
+    }*/
+    
+    init(movie: MovieDetailsModelType) {
+        self.model = movie
     }
+    
     
     
     func fetchMovie(movieId: String) {

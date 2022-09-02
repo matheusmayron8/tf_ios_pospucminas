@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CBB75D728C29E73006C7515 /* MovieDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB75D628C29E73006C7515 /* MovieDetailsModel.swift */; };
+		9CBB75D928C29EC4006C7515 /* MovieDetailsModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB75D828C29EC4006C7515 /* MovieDetailsModelMock.swift */; };
 		B33371AE28B6B53400A4AD8A /* MovieDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33371AD28B6B53400A4AD8A /* MovieDetailsModel.swift */; };
 		B33371B028B6BA9000A4AD8A /* MoviesDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33371AF28B6BA9000A4AD8A /* MoviesDetailsController.swift */; };
 		B33371B228B6BAF200A4AD8A /* MoviesDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33371B128B6BAF200A4AD8A /* MoviesDetailsViewModel.swift */; };
@@ -22,7 +24,6 @@
 		F9B5D15E28AB07B500861E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B5D15C28AB07B500861E08 /* Main.storyboard */; };
 		F9B5D16028AB07B600861E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B5D15F28AB07B600861E08 /* Assets.xcassets */; };
 		F9B5D16328AB07B600861E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B5D16128AB07B600861E08 /* LaunchScreen.storyboard */; };
-		F9B5D16E28AB07B700861E08 /* tf_matheus_limaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5D16D28AB07B700861E08 /* tf_matheus_limaTests.swift */; };
 		F9B5D17828AB07B700861E08 /* tf_matheus_limaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5D17728AB07B700861E08 /* tf_matheus_limaUITests.swift */; };
 		F9B5D17A28AB07B700861E08 /* tf_matheus_limaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5D17928AB07B700861E08 /* tf_matheus_limaUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9CBB75D628C29E73006C7515 /* MovieDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsModel.swift; sourceTree = "<group>"; };
+		9CBB75D828C29EC4006C7515 /* MovieDetailsModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsModelMock.swift; sourceTree = "<group>"; };
 		B33371AD28B6B53400A4AD8A /* MovieDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsModel.swift; sourceTree = "<group>"; };
 		B33371AF28B6BA9000A4AD8A /* MoviesDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDetailsController.swift; sourceTree = "<group>"; };
 		B33371B128B6BAF200A4AD8A /* MoviesDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 		F9B5D16228AB07B600861E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9B5D16428AB07B600861E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B5D16928AB07B700861E08 /* tf_matheus_limaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tf_matheus_limaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9B5D16D28AB07B700861E08 /* tf_matheus_limaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_matheus_limaTests.swift; sourceTree = "<group>"; };
 		F9B5D17328AB07B700861E08 /* tf_matheus_limaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tf_matheus_limaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B5D17728AB07B700861E08 /* tf_matheus_limaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_matheus_limaUITests.swift; sourceTree = "<group>"; };
 		F9B5D17928AB07B700861E08 /* tf_matheus_limaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_matheus_limaUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -94,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9CAC83DA28C29AC60057302A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9CAC83DB28C29AF90057302A /* MovieDetails */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9CAC83DB28C29AF90057302A /* MovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB75D628C29E73006C7515 /* MovieDetailsModel.swift */,
+				9CBB75D828C29EC4006C7515 /* MovieDetailsModelMock.swift */,
+			);
+			path = MovieDetails;
+			sourceTree = "<group>";
+		};
 		B33371AA28B6B49100A4AD8A /* MoviesDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +197,7 @@
 		F9B5D16C28AB07B700861E08 /* tf_matheus_limaTests */ = {
 			isa = PBXGroup;
 			children = (
-				F9B5D16D28AB07B700861E08 /* tf_matheus_limaTests.swift */,
+				9CAC83DA28C29AC60057302A /* ViewModel */,
 			);
 			path = tf_matheus_limaTests;
 			sourceTree = "<group>";
@@ -273,6 +292,7 @@
 					};
 					F9B5D16828AB07B700861E08 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = F9B5D15228AB07B500861E08;
 					};
 					F9B5D17228AB07B700861E08 = {
@@ -352,7 +372,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9B5D16E28AB07B700861E08 /* tf_matheus_limaTests.swift in Sources */,
+				9CBB75D728C29E73006C7515 /* MovieDetailsModel.swift in Sources */,
+				9CBB75D928C29EC4006C7515 /* MovieDetailsModelMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,14 +594,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.pucmg.aula02.tf-matheus-limaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "tf_matheus_limaTests/ViewModel/MovieDetails/tf_matheus_limaTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tf_matheus_lima.app/tf_matheus_lima";
@@ -592,14 +621,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.pucmg.aula02.tf-matheus-limaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "tf_matheus_limaTests/ViewModel/MovieDetails/tf_matheus_limaTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tf_matheus_lima.app/tf_matheus_lima";
