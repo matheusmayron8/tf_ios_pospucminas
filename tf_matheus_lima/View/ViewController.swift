@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         viewmodel = MoviesViewModel(service: MoviesService())
         
+        title = "Lista de filmes"
+        
         tableView.delegate = self
         tableView.dataSource = self
         viewmodel.delegate = self
@@ -40,7 +42,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         imageService.image(for: path) { [weak self] image in
                 // Update Thumbnail Image View
-                //cell.imageView?.image = image
             self?.tableView.cellForRow(at: indexPath)?.setNeedsLayout()
             (self?.tableView.cellForRow(at: indexPath) as! MovieTableViewCell).movieImgView.image = image
         }
@@ -64,8 +65,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func didTapCell(position: IndexPath) {
-            let id = String(movies[position.row].id)
-            self.present(MovieDetailsController(movieId: id), animated: true)
+            performSegue(withIdentifier: "MovieDetailsControllerSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MovieDetailsControllerSegue" {
+            let backItem = UIBarButtonItem()
+            backItem.title = "Voltar"
+            navigationItem.backBarButtonItem = backItem
+            if let destinationVC = segue.destination as? MovieDetailsController {
+                if let indexPath = self.tableView.indexPathForSelectedRow {
+                    destinationVC.movieId = String(movies[indexPath.row].id)
+                    self.tableView.deselectRow(at: indexPath, animated: false)
+                }
+            }
+        }
     }
     
     func reloadMoviesList() {
